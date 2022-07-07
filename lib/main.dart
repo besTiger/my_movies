@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:my_movies/view/home.dart';
-import 'package:get/get.dart';
-import 'package:my_movies/view/movie_details.dart';
-
+import 'package:flutter/services.dart';
+import 'home_screen.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
-      routes: {'/details': (context) => Details()},
+      home: HomeScreen(),
     );
   }
 }
